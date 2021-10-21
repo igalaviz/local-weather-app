@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <span>{{current.ciudad}}, {{current.estado}} </span>
+    <span>{{current.fecha | date:'fullDate'}}</span>
+  </div>
+  <div>
+    <img [src]='current.imagen'>
+    <span>{{current.temperatura | number:'1.0-0'}}˚C</span>
+  </div>
+  <div>
+    {{current.descripcion}}
+  </div>
+</div>
