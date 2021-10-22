@@ -1,26 +1,17 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
+import { Observable } from 'rxjs'
 
 import { ICurrentWeather } from '../interfaces'
+import { WeatherService } from '../weather/weather.service'
 
 @Component({
   selector: 'app-current-weather',
   templateUrl: './current-weather.component.html',
-  styleUrls: ['./current-weather.component.css']
+  styleUrls: ['./current-weather.component.css'],
 })
-export class CurrentWeatherComponent implements OnInit {
-  current: ICurrentWeather;
-  constructor() {
-    this.current = {
-      ciudad: 'Ecatepec',
-      estado: 'MX',
-      fecha: new Date(),
-      imagen: 'assets/img/index.jpg',
-      temperatura: 28,
-      descripcion: 'soleado',
-    } as ICurrentWeather
+export class CurrentWeatherComponent {
+  current$: Observable<ICurrentWeather>
+  constructor(private weatherService: WeatherService) {
+    this.current$ = this.weatherService.getCurrentWeather('Oaxaca', 'MX')
   }
-
-  ngOnInit(): void {
-  }
-
 }

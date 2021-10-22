@@ -1,8 +1,8 @@
 export interface ICurrentWeather {
-  ciudad: string
-  estado: string
-  fecha: Date
-  imagen: string
-  temperatura: number
-  descripcion: string
+  city: string
+  country: string
+  date: number
+  image: string
+  temperature: number
+  description: string
 }

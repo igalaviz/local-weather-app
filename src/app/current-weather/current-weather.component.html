@@ -1,13 +1,15 @@
-<div>
+<div *ngIf="current$ |async as current">
   <div>
-    <span>{{current.ciudad}}, {{current.estado}} </span>
-    <span>{{current.fecha | date:'fullDate'}}</span>
-  </div>
-  <div>
-    <img [src]='current.imagen'>
-    <span>{{current.temperatura | number:'1.0-0'}}˚C</span>
-  </div>
-  <div>
-    {{current.descripcion}}
+    <div>
+      <span>{{current.city}}, {{current.country}} </span>
+      <span>{{current.date | date:'fullDate'}}</span>
+    </div>
+    <div>
+      <img [src]='current.image'>
+      <span>{{current.temperature | number:'1.0-0'}}˚C</span>
+    </div>
+    <div>
+      {{current.description}}
+    </div>
   </div>
 </div>

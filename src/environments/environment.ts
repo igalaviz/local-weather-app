@@ -4,6 +4,11 @@
 
 export const environment = {
   production: false,
+  // Variables para API CUrrent Water
+  appId: '77ee1e730eac65208fd9d7a5abac7f1f',
+  baseUrl: 'http://',
+  units: 'metric',
+  lang: 'es',
 }
 
 /*
